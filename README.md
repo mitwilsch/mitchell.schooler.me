@@ -1,1 +1,0 @@
-# mitchell.schooler.me
