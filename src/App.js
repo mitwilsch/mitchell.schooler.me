@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+// implement routing
 class App extends Component {
   render() {
     return (
       <div className="App">
-
+        <Main />
       </div>
     );
   }
@@ -15,11 +15,11 @@ class App extends Component {
 class Main extends Component {
   render() {
     return (
-          <main>
+      <main>
       <h1 id="hello">Hello!</h1>
       <h3>My name's Mitchell!</h3>
-      <p>Look around to find my contact info, resum&#232, and cool things I'm working on.</p>
-      
+      <p>Look around to find my contact info, resume, and cool things I'm working on.</p>
+    
       <h2 id="portfolio">Portfolio</h2>
       <p>This section coming soon!</p>
 
