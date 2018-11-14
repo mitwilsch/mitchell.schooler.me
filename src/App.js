@@ -28,7 +28,10 @@ function Home() {
       
         <h2 id="portfolio">Portfolio</h2>
         <p>Check out my portfolio on Github! </p>
-        
+        <Button  variant="outlined" href="http://www.github.com/mitwilsch">
+          GitHub
+        </Button>
+
 
         <h2 id="contact">Contact Info</h2>
         <p>If you want to get ahold of me, drop me an email!</p>
