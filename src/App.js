@@ -1,14 +1,13 @@
 import React from 'react';
 //import ReactDOM from 'react-dom';
-//import logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
 import Header from './Header.js'
-import { HashRouter as Router, Route, 
-  //Link 
-} from "react-router-dom";
-
+import { HashRouter as Router, Route } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography"
+import Typography from "@material-ui/core/Typography";
+import Mail from '@material-ui/icons/Mail';
+
 function App() {
   return (
     <Router>
@@ -29,9 +28,10 @@ function Home() {
           Hello!
         </Typography>
         <h3>My name's Mitchell!</h3>
-        <p>Look around to find my contact info, resume, and cool things I'm working on.</p>
+        <p>I'm a Freelance Web Developer focusing in NodeJS/React
+          
+        </p>
       
-        <h2 id="portfolio">Portfolio</h2>
         <p>Check out my portfolio on Github! </p>
         <Button  variant="outlined" href="http://www.github.com/mitwilsch">
           GitHub
@@ -40,7 +40,11 @@ function Home() {
 
         <h2 id="contact">Contact Info</h2>
         <p>If you want to get ahold of me, drop me an email!</p>
-        <p>Email: <a href="mailto:mitchell@schooler.me">mitchell@schooler.me</a></p>
+        <Button variant="outlined" 
+          href="mailto:mitchell@schooler.me"
+        >
+          <Mail />
+        </Button>
         
       </div>
     )

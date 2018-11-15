@@ -7,7 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 //import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-//import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from '@material-ui/icons/Menu';
 //import List from '@material-ui/core/List';
 //import Divider from '@material-ui/core/Divider';
 //import ListItem from '@material-ui/core/ListItem';
@@ -54,10 +54,13 @@ class Header extends React.Component {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <Typography variant="headline" color="inherit" onClick={this.test}>
+            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" color="inherit"className={classes.grow}>
               {page}
             </Typography>
-            <IconButton className={classes.menuButton}
+            <IconButton
               aria-owns={open ? 'menu' : undefined}
               aria-haspopup="true"
               onClick={this.handleMenu}
@@ -79,8 +82,7 @@ class Header extends React.Component {
               open={open}
               onClose={this.handleClose}
             >
-              <MenuItem onClick={this.handleClose}>Apps</MenuItem>
-              <MenuItem onClick={this.handleClose}>Help</MenuItem>
+              <MenuItem onClick={this.handleClose}>Login</MenuItem>
             </Menu>
           </Toolbar>
         </AppBar>
