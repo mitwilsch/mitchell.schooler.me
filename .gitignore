@@ -1,3 +1,12 @@
+#*
+#!.gitignore
+#!build/
+#!build/*
+#to push build dir: remove these comments, then run:
+#git rm -r --cached
+#git add 
+#git push origin serve
+
 package-lock.json
 node_modules
 logs/*
