@@ -6,7 +6,7 @@ import Mail from '@material-ui/icons/Mail';
 function Home() {
     return (
       <div>
-        <Typography variant="h3">
+        <Typography variant="h4">
           Hello!
         </Typography>
         <h3>My name's Mitchell!</h3>
