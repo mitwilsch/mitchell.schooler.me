@@ -1,19 +1,21 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
+
+// * Material-UI
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-//import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import Menu from '@material-ui/core/Menu';
 //import List from '@material-ui/core/List';
 //import Divider from '@material-ui/core/Divider';
 //import ListItem from '@material-ui/core/ListItem';
 //import ListItemIcon from '@material-ui/core/ListItemIcon';
 //import ListItemText from '@material-ui/core/ListItemText';
-import Menu from '@material-ui/core/Menu';
+
+// * Icons
+import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 
 const styles = {
@@ -33,9 +35,6 @@ class Header extends React.Component {
   state = {
     page: "Home",
     anchorEl: null,
-  };
-  test = () => {
-    console.log("test")
   };
 
   handleMenu = event => {
@@ -89,5 +88,5 @@ class Header extends React.Component {
       </div>
     );
   }
-}
+};
 export default withStyles(styles)(Header);

@@ -1,56 +1,20 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import Header from './Header.js'
+import Home from './Home.js'
 import { HashRouter as Router, Route } from "react-router-dom";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import Mail from '@material-ui/icons/Mail';
 
-function App() {
-  return (
-    <Router>
-      <div>
-        <Header />
-        <main>
-          <Route exact path="/" component={Home} />
-        </main>
-      </div>
-    </Router>
-  );
-}
-
-function Home() {
+class App extends React.Component {
+  render() {
     return (
-      <div>
-        <Typography variant="h3">
-          Hello!
-        </Typography>
-        <h3>My name's Mitchell!</h3>
-        <p>I'm a Freelance Web Developer focusing in NodeJS/React
-          
-        </p>
-      
-        <p>Check out my portfolio on Github! </p>
-        <Button  variant="outlined" href="http://www.github.com/mitwilsch">
-          GitHub
-        </Button>
-
-
-        <h2 id="contact">Contact Info</h2>
-        <p>If you want to get ahold of me, drop me an email!</p>
-        <Button variant="outlined" 
-          href="mailto:mitchell@schooler.me"
-        >
-          <Mail />
-        </Button>
-        
-      </div>
-    )
-  
-}
-
-
-
+      <Router>
+        <div>
+          <Header />
+          <Route exact path="/" component={Home} />
+        </div>
+      </Router>
+    );
+  } 
+};
 export default App;
