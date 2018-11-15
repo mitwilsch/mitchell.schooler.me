@@ -1,11 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { HashRouter } from 'react-router-dom'
+import { HashRouter as Router, Route } from "react-router-dom";
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { createMuiTheme } from '@material-ui/core/styles';
-//import blue from '@material-ui/core/colors/blue';
+//import logo from './logo.svg';
+import './index.css';
+import Header from './Header.js';
+import Home from './Home.js';
+import About from './About.js';
+
+
+class App extends React.Component {
+  render() {
+
+    const routes = [
+      { page: 'Home', path: '/', component: Home}, 
+      { page: 'About', path: '/About', component: About}
+    ];
+
+    const routeComponents = 
+      routes.map( ( { path, component}, key) => 
+      <Route
+        exact path={path} 
+        component={component} 
+        key={key} 
+      />);
+  
+    return (
+      <Router>
+          <div>
+            <Header drawerListItems={routes}/>
+            {routeComponents}
+          </div>
+      </Router>
+    );
+  } 
+};
+
+
+
 
 const theme = createMuiTheme({
   palette: {
@@ -16,10 +49,8 @@ const theme = createMuiTheme({
   },
 });
 ReactDOM.render((
-  <HashRouter>
     <MuiThemeProvider theme={theme}>
       <App />
     </MuiThemeProvider>
-  </HashRouter>
 ), document.getElementById('root'));
 

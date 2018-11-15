@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 // * Material-UI
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -8,11 +8,12 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
-//import List from '@material-ui/core/List';
+import Drawer from '@material-ui/core/Drawer';
+import List from '@material-ui/core/List';
 //import Divider from '@material-ui/core/Divider';
-//import ListItem from '@material-ui/core/ListItem';
+import ListItem from '@material-ui/core/ListItem';
 //import ListItemIcon from '@material-ui/core/ListItemIcon';
-//import ListItemText from '@material-ui/core/ListItemText';
+import ListItemText from '@material-ui/core/ListItemText';
 
 // * Icons
 import MenuIcon from '@material-ui/icons/Menu';
@@ -33,6 +34,7 @@ const styles = {
 
 class Header extends React.Component {
   state = {
+    isOpen: false,
     page: "Home",
     anchorEl: null,
   };
@@ -45,15 +47,36 @@ class Header extends React.Component {
     this.setState({ anchorEl: null });
   };
 
+  toggleDrawer = (open) => () => {
+    this.setState(
+      {isOpen: open,}
+    )
+  };
+
   render() {
     const { classes } = this.props;
     const { page, anchorEl } = this.state;
     const open = Boolean(anchorEl);
+    const routes = this.props.drawerListItems;    
+    const drawerListItems = (
+      <List>
+        {routes.map(({ page, path}, key) => (
+      <ListItem button component={Link} to={path} key={key}>
+        <ListItemText primary={page} />
+      </ListItem>
+        ))};
+      </List>
+    );
+
     return (
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+            <IconButton 
+              className={classes.menuButton} 
+              color="inherit" 
+              aria-label="Menu"
+              onClick={this.toggleDrawer(true)}>
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit"className={classes.grow}>
@@ -85,6 +108,18 @@ class Header extends React.Component {
             </Menu>
           </Toolbar>
         </AppBar>
+
+
+        <Drawer open={this.state.isOpen} onClose={this.toggleDrawer(false)}>
+          <div 
+            tabIndex={0}
+            role="button"
+            onClick={this.toggleDrawer(false)}
+            onKeyDown={this.toggleDrawer(false)}
+          >
+              {drawerListItems}
+          </div>
+        </Drawer>
       </div>
     );
   }
