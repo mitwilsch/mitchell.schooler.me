@@ -2,7 +2,7 @@
   "name": "mitchell.schooler.me",
   "version": "0.1.0",
   "private": true,
-  "homepage": "mitchell.schooler.me",
+  "homepage": "http://mitwilsch.github.io/mitchell.schooler.me",
   "dependencies": {
     "@material-ui/core": "^3.4.0",
     "@material-ui/icons": "^3.0.1",
