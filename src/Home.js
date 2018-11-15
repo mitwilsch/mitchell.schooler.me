@@ -14,7 +14,7 @@ function Home() {
             I'm a Freelance Web Developer focusing in NodeJS/React
         </p>
       
-        <p>Check out my portfolio on Github! </p>
+        <p>Check out my portfolio on Github! You can see this website in one of my repos!</p>
         <Button  variant="outlined" href="http://www.github.com/mitwilsch">
           GitHub
         </Button>
