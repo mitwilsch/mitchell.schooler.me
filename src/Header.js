@@ -82,14 +82,14 @@ class Header extends React.Component {
             <Typography variant="h6" color="inherit"className={classes.grow}>
               {page}
             </Typography>
-            <IconButton
+            {/*<IconButton
               aria-owns={open ? 'menu' : undefined}
               aria-haspopup="true"
               onClick={this.handleMenu}
               color="inherit"
-            >
+            > 
               <AccountCircle />
-            </IconButton>
+            </IconButton>*/}
             <Menu 
               id="menu"
               anchorEl={anchorEl}

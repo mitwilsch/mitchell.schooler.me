@@ -16,7 +16,6 @@ class App extends React.Component {
 
     const routes = [
       { page: 'Home', path: '/', component: Home}, 
-      { page: 'About', path: '/About', component: About}
     ];
 
     const routeComponents = 
