@@ -17,7 +17,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 // * Icons
 import MenuIcon from '@material-ui/icons/Menu';
-import AccountCircle from '@material-ui/icons/AccountCircle';
+//import AccountCircle from '@material-ui/icons/AccountCircle';
 
 const styles = {
   root: {

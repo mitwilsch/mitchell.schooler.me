@@ -1,11 +1,41 @@
 import React from 'react';
-import About from './About.js';
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import Mail from '@material-ui/icons/Mail';
+import { withStyles } from '@material-ui/core/styles';
 
-function Home() {
-    return (
-      <div>
-        <About />
-      </div>
-    )  
-};
-export default Home;
+const styles = theme => ({
+  home: {
+    
+  }
+})
+class Home extends React.Component {
+  render() {
+  const {classes} = this.props;
+  
+  return (
+  <div className={classes.home}>
+    <Typography variant="h4">
+        Hello!
+    </Typography>
+    <h3>My name's Mitchell!</h3>
+    <p>
+        I'm a Freelance Web Developer focusing in NodeJS/React
+    </p>
+
+    <p>Check out my portfolio on Github! You can see this website in one of my repos!</p>
+    <Button  variant="outlined" href="https://www.github.com/mitwilsch">
+        GitHub
+    </Button>
+    <h2 id="contact">Contact Info</h2>
+    <p>If you want to get ahold of me, drop me an email!</p>
+    <Button variant="outlined" 
+        href="mailto:mitchell@schooler.me"
+    >
+        <Mail />
+    </Button> 
+  </div>
+
+  );
+}};
+export default withStyles(styles)(Home);
