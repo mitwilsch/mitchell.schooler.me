@@ -15,7 +15,7 @@ function About() {
     </p>
 
     <p>Check out my portfolio on Github! You can see this website in one of my repos!</p>
-    <Button  variant="outlined" href="http://www.github.com/mitwilsch">
+    <Button  variant="outlined" href="https://www.github.com/mitwilsch">
         GitHub
     </Button>
     <h2 id="contact">Contact Info</h2>
