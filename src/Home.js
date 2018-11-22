@@ -1,44 +1,30 @@
 import React from 'react';
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import Mail from '@material-ui/icons/Mail';
-import { withStyles } from '@material-ui/core/styles';
+//import { withStyles } from '@material-ui/core/styles';
+import ReactMarkdown from 'react-markdown/with-html';
+//const styles = theme => ({  })
 
-document.title = "Home";
-const styles = theme => ({
-  pageName: 'Home',
-  home: {
-    
-}
+const page = `
+# My Name's Mitchell!
 
-})
-class Home extends React.Component {
-  render() {
-  const {classes} = this.props;
-  
+I'm a hacker by heart, pizza maker by trade. I solve problems and make
+dreams happen, and I help the fine citizens of San Clemente get their 
+hot and greasy pepperoni goodness. I can be found wherever there is coffee, 
+and my philosophy is "Smoke if you got 'em".
+
+## But enough about me...
+
+Well, actually there's not much else. Try clicking around, or try again later
+`;
+
+function Home() {
   return (
-  <div className={classes.home}>
-    <Typography variant="h4">
-        Hello!
-    </Typography>
-    <h3>My name's Mitchell!</h3>
-    <p>
-        I'm a Freelance Web Developer focusing in NodeJS/React
-    </p>
-
-    <p>Check out my portfolio on Github! You can see this website in one of my repos!</p>
-    <Button  variant="outlined" href="https://www.github.com/mitwilsch">
-        GitHub
-    </Button>
-    <h2 id="contact">Contact Info</h2>
-    <p>If you want to get ahold of me, drop me an email!</p>
-    <Button variant="outlined" 
-        href="mailto:mitchell@schooler.me"
-    >
-        <Mail />
-    </Button> 
-  </div>
-
-  );
-}};
-export default withStyles(styles)(Home);
+    <div>
+      <ReactMarkdown 
+          source={page} 
+          escapeHtml={false}
+      />
+    </div>
+  );  
+};
+//export default withStyles(styles)(Home);
+export default Home;
