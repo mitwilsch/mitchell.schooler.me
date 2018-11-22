@@ -63,12 +63,10 @@ class Header extends React.Component {
         {routes.map(({ page, path}, key) => (
       <ListItem 
         button 
-        selected={document.title === page} 
         component={Link} 
         to={path} 
         key={key}
       >
-      {console.log(this.pageName)}
         <ListItemText primary={page} />
       </ListItem>
         ))};
@@ -87,7 +85,7 @@ class Header extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit"className={classes.grow}>
-              {document.title}
+              Mitchell Schooler
             </Typography>
             {/*<IconButton
               aria-owns={open ? 'menu' : undefined}
