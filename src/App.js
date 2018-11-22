@@ -28,7 +28,7 @@ class App extends React.Component {
     ];
     
     const routeComponents = 
-      routes.map( ( { path, component}, key) => 
+      routes.map( ( { path, component, page}, key) => 
       <Route
         exact path={path} 
         component={component} 
@@ -38,7 +38,8 @@ class App extends React.Component {
     return (
       <Router>
         <div>   
-          <Header drawerListItems={routes}/> 
+          <Header drawerListItems={routes} pageName={this.page}/> 
+          {console.log(this.page)}
           <main className={classes.root}>
             {routeComponents }
           </main>

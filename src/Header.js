@@ -35,7 +35,7 @@ const styles = {
 class Header extends React.Component {
   state = {
     isOpen: false,
-    page: "Home",
+    page: "",
     anchorEl: null,
   };
 
@@ -52,16 +52,23 @@ class Header extends React.Component {
       {isOpen: open,}
     )
   };
-
+// get pagename into state
   render() {
     const { classes } = this.props;
-    const { page, anchorEl } = this.state;
+    const { anchorEl } = this.state;
     const open = Boolean(anchorEl);
-    const routes = this.props.drawerListItems;    
+    const routes = this.props.drawerListItems;  
     const drawerListItems = (
       <List>
         {routes.map(({ page, path}, key) => (
-      <ListItem button component={Link} to={path} key={key}>
+      <ListItem 
+        button 
+        selected={document.title === page} 
+        component={Link} 
+        to={path} 
+        key={key}
+      >
+      {console.log(this.pageName)}
         <ListItemText primary={page} />
       </ListItem>
         ))};
@@ -80,7 +87,7 @@ class Header extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit"className={classes.grow}>
-              {page}
+              {document.title}
             </Typography>
             {/*<IconButton
               aria-owns={open ? 'menu' : undefined}

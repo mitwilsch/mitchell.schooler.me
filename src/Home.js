@@ -4,10 +4,13 @@ import Typography from "@material-ui/core/Typography";
 import Mail from '@material-ui/icons/Mail';
 import { withStyles } from '@material-ui/core/styles';
 
+document.title = "Home";
 const styles = theme => ({
+  pageName: 'Home',
   home: {
     
-  }
+}
+
 })
 class Home extends React.Component {
   render() {

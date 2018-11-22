@@ -2,9 +2,11 @@ import React from 'react';
 //import { withStyles } from '@material-ui/core/styles';
 import ReactMarkdown from 'react-markdown/with-html';
 
+document.title="About";
 //const styles = theme => ({  })
 const page = `
 # About
+
 `
 
 function About() {
