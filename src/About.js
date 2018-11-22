@@ -1,9 +1,8 @@
 import React from 'react';
 //import { withStyles } from '@material-ui/core/styles';
 import ReactMarkdown from 'react-markdown/with-html';
-
-document.title="About";
 //const styles = theme => ({  })
+
 const page = `
 # About
 
@@ -130,19 +129,17 @@ Most of these will require user authentication,
 
   ## Footer
   Thanks for visiting my site! I hope you learned something useful!
-`
+`;
 
 function About() {
-  
-    
-    return (
-      <div>
-        <ReactMarkdown 
-            source={page} 
-            escapeHtml={false}
-        />
-      </div>
-    )  
+  return (
+    <div>
+      <ReactMarkdown 
+          source={page} 
+          escapeHtml={false}
+      />
+    </div>
+  );  
 };
 //export default withStyles(styles)(About);
 export default About;
