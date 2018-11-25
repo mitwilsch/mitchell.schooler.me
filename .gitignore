@@ -22,6 +22,8 @@ logs/*
 
 # production
 /build
+.firebase
+src/Firestore.js
 
 # misc
 .DS_Store

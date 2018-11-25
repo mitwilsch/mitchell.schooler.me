@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles'
 import Header from './Header.js';
 import Home from './Home.js';
 import About from './About.js';
-
+import User from './User.js';
 
 const styles = theme => ({
     root: {
@@ -17,33 +17,37 @@ const styles = theme => ({
     },
 });
 
+
+
 class App extends React.Component {
     render() {
     const {classes} = this.props;
-    
-   
+
     const routes = [
       { page: 'Home', path: '/', component: Home}, 
-      { page: 'About', path: '/about', component: About}
+      { page: 'About', path: '/about', component: About},
+      { page: 'User', path: '/user', component: User}
     ];
     
     const routeComponents = 
       routes.map( ( { path, component, page}, key) => 
+      <React.Fragment>
+      <div className={classes.root}>
+        
       <Route
         exact path={path} 
         component={component} 
         key={key} 
-      />);
+      />
+      </div>
+      </React.Fragment>);
   
     return (
       <Router>
-        <div>   
-          <Header drawerListItems={routes} pageName={this.page}/> 
-          {console.log(this.page)}
-          <main className={classes.root}>
-            {routeComponents }
-          </main>
-        </div>
+        <React.Fragment>
+          <Header drawerListItems={routes} pageName={this.page}/>
+          {routeComponents}
+        </React.Fragment>
       </Router>
     );
   } 
