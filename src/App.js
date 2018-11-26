@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles'
 import Header from './Header.js';
 import Home from './Home.js';
 import About from './About.js';
-import User from './User.js';
+import Todo from './Todo.js';
 
 const styles = theme => ({
     root: {
@@ -26,7 +26,7 @@ class App extends React.Component {
     const routes = [
       { page: 'Home', path: '/', component: Home}, 
       { page: 'About', path: '/about', component: About},
-      { page: 'User', path: '/user', component: User}
+      { page: 'Todo', path: '/todo', component: Todo}
     ];
     
     const routeComponents = 
