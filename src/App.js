@@ -31,16 +31,15 @@ class App extends React.Component {
     
     const routeComponents = 
       routes.map( ( { path, component, page}, key) => 
-      <React.Fragment>
-      <div className={classes.root}>
-        
-      <Route
-        exact path={path} 
-        component={component} 
-        key={key} 
-      />
-      </div>
-      </React.Fragment>);
+        <div className={classes.root}>
+          
+        <Route
+          exact path={path} 
+          component={component} 
+          key={key} 
+        />
+        </div>
+      );
   
     return (
       <Router>
