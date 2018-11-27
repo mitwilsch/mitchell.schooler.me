@@ -12,7 +12,9 @@ class Todo extends React.Component {
       <FirestoreCollection
         path='users/admin/totos'
         render={({ isLoading, data }) => {
-          return (
+          return isLoading ? (
+            <p>Loading</p>
+          ): (
             <div>
               <ul>
                 {console.log(data)}
