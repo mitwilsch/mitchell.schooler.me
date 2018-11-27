@@ -69,7 +69,7 @@ class Header extends React.Component {
       >
         <ListItemText primary={page} />
       </ListItem>
-        ))};
+        ))}
       </List>
     );
 
@@ -126,7 +126,7 @@ class Header extends React.Component {
           </div>
         </Drawer>
       </div>
-    );
+    )
   }
 };
 export default withStyles(styles)(Header);
