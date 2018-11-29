@@ -5,33 +5,30 @@ import Header from './Header.js';
 import Home from './Home.js';
 import About from './About.js';
 import Todo from './Todo.js';
+import Page from './Page.js';
 
 const styles = theme => ({
-    root: {
-        display: 'flex',
-        flexDirection: 'column',
-        //alignItems: 'center',
-        marginLeft: theme.spacing.unit *3,
-        paddingTop: theme.spacing.unit*5,
-
-    },
+  root: {
+    color: 'red',
+  },
 });
 
 
 
 class App extends React.Component {
     render() {
-    const {classes} = this.props;
+    //const {classes} = this.props;
 
     const routes = [
       { page: 'Home', path: '/', component: Home}, 
       { page: 'About', path: '/about', component: About},
-      { page: 'Project: Todo', path: '/todo', component: Todo}
+      { page: 'Project: Todo', path: '/todo', component: Todo},
+      { page: 'New Style', path: '/new-style', component: Page}
     ];
     
     const routeComponents = 
       routes.map( ( { path, component, page}, key) => 
-        <div className={classes.root}>
+        <div>
           
         <Route
           exact path={path} 
