@@ -4,46 +4,37 @@ import { withStyles } from '@material-ui/core/styles'
 import Header from './Header.js';
 import Home from './Home.js';
 import About from './About.js';
-import Todo from './Todo.js';
-import Page from './Page.js';
 
 const styles = theme => ({
   root: {
-    color: 'red',
+    // global styles go here
   },
 });
 
-
-
 class App extends React.Component {
-    render() {
-    //const {classes} = this.props;
+  render() {
+    const {classes} = this.props;
 
-    const routes = [
+    const routes = [ // drawer gets routes from this list
       { page: 'Home', path: '/', component: Home}, 
-      { page: 'About', path: '/about', component: About},
-      { page: 'Project: Todo', path: '/todo', component: Todo},
-      { page: 'New Style', path: '/new-style', component: Page}
+      { page: 'About', path: '/about', component: About}
     ];
     
     const routeComponents = 
       routes.map( ( { path, component, page}, key) => 
-        <div>
-          
-        <Route
-          exact path={path} 
-          component={component} 
-          key={key} 
-        />
-        </div>
-      );
-  
+      <Route
+        exact path={path} 
+        component={component} 
+        key={key} 
+      />
+    );
+
     return (
       <Router>
-        <React.Fragment>
+        <div className={classes.root}>
           <Header drawerListItems={routes} pageName={this.page}/>
           {routeComponents}
-        </React.Fragment>
+        </div>
       </Router>
     );
   } 

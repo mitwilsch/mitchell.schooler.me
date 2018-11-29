@@ -6,11 +6,9 @@
   "dependencies": {
     "@material-ui/core": "^3.4.0",
     "@material-ui/icons": "^3.0.1",
-    "firebase": "^5.5.9",
     "gh-pages": "^2.0.1",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
-    "react-firestore": "^0.10.3",
     "react-markdown": "^4.0.3",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1"
