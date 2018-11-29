@@ -26,7 +26,7 @@ class App extends React.Component {
     const routes = [
       { page: 'Home', path: '/', component: Home}, 
       { page: 'About', path: '/about', component: About},
-      { page: 'Todo', path: '/todo', component: Todo}
+      { page: 'Project: Todo', path: '/todo', component: Todo}
     ];
     
     const routeComponents = 

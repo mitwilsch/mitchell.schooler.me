@@ -13,7 +13,7 @@ and my philosophy is "Smoke if you got 'em".
 
 ## But enough about me...
 
-Well, actually there's not much else. Try clicking around, or try again later
+Check out the links in the sidebar to see more of what I do, what I'm working on, and more.
 `;
 
 function Home() {
