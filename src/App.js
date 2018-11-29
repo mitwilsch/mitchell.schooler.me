@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles'
 import Header from './Header.js';
 import Home from './Home.js';
