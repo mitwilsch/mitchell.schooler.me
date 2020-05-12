@@ -12,7 +12,7 @@ const App = () => {
   const profile = {
     body: `My name is Mitchell
     
-  This is my site`,
+  `,
     avatar,
     links: [
       { src: '#Demo', name: 'Demo' },
