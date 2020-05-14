@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "serve": "npx http-server dist -p 80",
     "dockerBuild": "docker build -t mitwilsch/mitchell.schooler.me:latest ."
-  }
+  },
     "dependencies": {
     "@material-ui/core": "^4.9.1",
     "@material-ui/styles": "^4.9.13",
