@@ -27,15 +27,15 @@ const PortfolioSection = props => {
             <Card elevation={5} key={index}>
               <CardContent>
                 <Typography variant="h4">{item.title}</Typography>
-                <img src={img} alt="ProjectImg" />
+                {/*<img src={img} alt="ProjectImg" />*/}
                 <Typography style={{ whiteSpace: 'pre-line' }} variant="body1">
                   {/* This works for multiLine! */}
                   {item.description}
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small" href={item.link}>
-                  Demo
+                <Button variant="outlined" color="secondary" href={item.link}>
+                  Link
                 </Button>
               </CardActions>
             </Card>

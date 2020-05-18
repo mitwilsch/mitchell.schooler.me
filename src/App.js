@@ -10,33 +10,22 @@ const App = () => {
   const styles = useStyles();
 
   const profile = {
-    body: `My name is Mitchell
-    
-  `,
+    body: '',
     avatar,
-    links: [
-      { src: '#Demo', name: 'Demo' },
-      { src: '#test', name: 'Test' },
-    ],
+    links: [{ src: '#Contact', name: 'Contact' }],
   };
 
   const portfolio = [
     {
-      title: 'Title of project',
-      description: 'Description of project\n Test',
+      title: 'Schooler.me',
+      description: 'Schooler family website, interactive family tree browser',
       img: '/public/favicon-32x32.png',
-      link: '#Link',
-    },
-    {
-      title: 'title 2',
-      description: 'testing 2',
-      img: '',
-      link: '#2',
+      link: 'https://schooler.me',
     },
   ];
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       <div style={{ flex: 1 }}>
         <ProfileSection
           body={profile.body}
