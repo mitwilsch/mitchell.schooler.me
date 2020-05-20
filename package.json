@@ -1,20 +1,19 @@
 {
-  "name": "toto",
+  "name": "mitchell.schooler.me",
   "version": "0.0.1",
-  "description": "toto: todo app",
+  "description": "Personal Website",
   "main": "src/server/index.js",
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --devtool inline-source-map --hot",
-    "serve": "npx http-server dist -p 80",
+    "serve": "npx http-server dist -p 3000",
     "dockerBuild": "docker build -t mitwilsch/mitchell.schooler.me:latest ."
   },
-    "dependencies": {
+  "dependencies": {
     "@material-ui/core": "^4.9.1",
     "@material-ui/styles": "^4.9.13",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-markdown": "^4.3.1",
     "typeface-roboto": "0.0.75"
   },
   "devDependencies": {

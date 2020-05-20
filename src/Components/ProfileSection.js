@@ -22,9 +22,8 @@ const useStyles = makeStyles({
   },
 });
 
-const ProfileSection = props => {
+const ProfileSection = () => {
   const styles = useStyles();
-  const { body, links, avatar } = props;
 
   return (
     <div className={styles.main}>
