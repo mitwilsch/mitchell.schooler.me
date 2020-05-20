@@ -1,4 +1,5 @@
 import PortfolioSection from './PortfolioSection';
 import ProfileSection from './ProfileSection';
-
-export { ProfileSection, PortfolioSection };
+import Header from './Header';
+import Footer from './Footer';
+export { Footer, Header, ProfileSection, PortfolioSection };

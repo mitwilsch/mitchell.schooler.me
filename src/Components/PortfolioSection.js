@@ -9,33 +9,30 @@ import {
 } from '@material-ui/core';
 
 const PortfolioSection = props => {
-  const { list } = props;
-
   return (
     <Paper>
       {/*Material this component */}
       <h1>Some of my projects</h1>
 
       <div>
-        {list.map((item, index) => {
-          const { title, description, img, link } = item;
-          return (
-            <Card elevation={5} key={index}>
-              <CardContent>
-                <Typography variant="h4">{item.title}</Typography>
+        <Card elevation={5}>
+          <CardContent>
+            <Typography variant="h4">Schooler.me</Typography>
 
-                <Typography style={{ whiteSpace: 'pre-line' }} variant="body1">
-                  {item.description}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button variant="outlined" color="secondary" href={item.link}>
-                  Link
-                </Button>
-              </CardActions>
-            </Card>
-          );
-        })}
+            <Typography variant="body1" gutterBottom>
+              Schooler family website, interactive family tree browser
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button
+              variant="outlined"
+              color="secondary"
+              href="https://schooler.me"
+            >
+              Link
+            </Button>
+          </CardActions>
+        </Card>
       </div>
     </Paper>
   );
