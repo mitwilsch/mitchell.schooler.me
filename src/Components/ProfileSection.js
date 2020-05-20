@@ -1,17 +1,18 @@
 import React from 'react';
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Card } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles/';
 
 const useStyles = makeStyles({
   main: {
     margin: 'auto',
+    marginTop: '10%',
   },
-  img: {
+  circleImg: {
     borderRadius: '50%',
     display: 'block',
     marginLeft: 'auto',
     marginRight: 'auto',
-    width: '50%',
+    width: '25%',
   },
   alignItemsAndJustifyContent: {
     width: 'auto',
@@ -27,29 +28,17 @@ const ProfileSection = props => {
 
   return (
     <div className={styles.main}>
-      <Typography variant="h3" align="center" gutterBottom>
-        Mitchell Schooler
-      </Typography>
-
-      <img className={styles.img} src={avatar} alt="Avatar" />
-
-      <Typography variant="h5" align="center">
-        This is my website!
-      </Typography>
-      <Typography variant="h5" align="center" paragraph={true}>
-        Check out some cool things I made
-      </Typography>
-
-      <div className={styles.alignItemsAndJustifyContent}>
-        <Button
-          size="large"
-          variant="contained"
-          color="primary"
-          href={'#Contact'}
-        >
-          Contact Me
-        </Button>
-      </div>
+      <Card>
+        <Typography variant="h5" align="center" paragraph={true}>
+          Hi, my name is Mitchell Schooler. I love making pizza, coding, and
+          telling jokes.
+        </Typography>
+        <Typography variant="h5" align="center" paragraph={true}>
+          Check out some of my projects down below, or{' '}
+          <a href="#Contact">contact me</a>
+        </Typography>
+        <div className={styles.alignItemsAndJustifyContent}></div>
+      </Card>
     </div>
   );
 };

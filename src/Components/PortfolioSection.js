@@ -18,7 +18,8 @@ const PortfolioSection = props => {
 
   return (
     <Paper>
-      <h1>Portfolio</h1>
+      {/*Material this component */}
+      <h1>Some of my projects</h1>
 
       <div>
         {list.map((item, index) => {
