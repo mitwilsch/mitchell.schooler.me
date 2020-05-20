@@ -1,32 +1,9 @@
 import React from 'react';
-import { Typography, Link, makeStyles, Container } from '@material-ui/core';
-
-const useStyles = makeStyles(theme => ({
-  footer: {
-    padding: theme.spacing(3, 2),
-    marginTop: 'auto',
-    backgroundColor: theme.palette.background.paper,
-  },
-}));
-
-const Copyright = () => {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mitchell.schooler.me">
-        Mitchell Schooler
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-};
+import { Typography, Link } from '@material-ui/core';
 
 const Footer = props => {
-  const styles = useStyles();
-
   return (
-    <Container component="footer" className={styles.footer}>
+    <React.Fragment>
       <Typography variant="h6" align="center" gutterBottom>
         mitchell.schooler.me
       </Typography>
@@ -38,8 +15,14 @@ const Footer = props => {
       >
         Created with React
       </Typography>
-      <Copyright />
-    </Container>
+      <Typography variant="body2" color="textSecondary" align="center">
+        {'Copyright © '}
+        <Link color="inherit" href="https://mitchell.schooler.me">
+          Mitchell Schooler
+        </Link>
+        {' 2020.'}
+      </Typography>
+    </React.Fragment>
   );
 };
 

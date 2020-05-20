@@ -8,11 +8,12 @@ import {
   Paper,
 } from '@material-ui/core';
 
-const PortfolioSection = props => {
+const Portfolio = props => {
   return (
-    <Paper>
-      {/*Material this component */}
-      <h1>Some of my projects</h1>
+    <React.Fragment>
+      <Typography variant="h3" align="center" gutterBottom>
+        My Portfolio
+      </Typography>
 
       <div>
         <Card elevation={5}>
@@ -34,8 +35,8 @@ const PortfolioSection = props => {
           </CardActions>
         </Card>
       </div>
-    </Paper>
+    </React.Fragment>
   );
 };
 
-export default PortfolioSection;
+export default Portfolio;
