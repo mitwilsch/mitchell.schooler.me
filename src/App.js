@@ -25,13 +25,14 @@ const App = () => {
     <div className={styles.root}>
       <CssBaseline />
 
-      <Header />
-      <Container component="main" className={styles.main} maxWidth="sm">
-        <Route exact={true} path="/" component={Main}></Route>
-        <Route path="/Portfolio" component={Portfolio}></Route>
-        <Route path="/About" component={About}></Route>
-        <Route path="/Contact" component={Contact}></Route>
-      </Container>
+      <Header>
+        <Container component="main" className={styles.main} maxWidth="sm">
+          <Route exact={true} path="/" component={Main}></Route>
+          <Route path="/Portfolio" component={Portfolio}></Route>
+          <Route path="/About" component={About}></Route>
+          <Route path="/Contact" component={Contact}></Route>
+        </Container>
+      </Header>
       <footer className={styles.footer}>
         <Container maxWidth="sm">
           <Footer />
