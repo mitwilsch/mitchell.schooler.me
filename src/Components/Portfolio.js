@@ -37,6 +37,13 @@ const list = [
     desc:
       'Server framework for hosting multiple React and Express apps fromthe same server, containerized for portability',
   },
+  {
+    name: 'Toto',
+    sourceLink: 'https://github.com/mitwilsch/toto',
+    demoLink: 'https://toto-tasks.myddns.me',
+    desc:
+      'A tasks app emulating the look of Google Tasks (bottom bar, lots of whitespace).',
+  },
 ];
 
 const Portfolio = props => {
