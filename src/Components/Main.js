@@ -19,7 +19,7 @@ const Main = () => {
         telling jokes.
       </Typography>
       <Typography variant="h5" align="center" paragraph={true}>
-        Check out some of my projects, read more about me, or contact me
+        Check out some of my projects, my Resumé, or read more about me.
       </Typography>
     </div>
   );

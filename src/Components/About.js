@@ -1,29 +1,53 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
+import { Typography, Button, Divider } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles/';
 
 const useStyles = makeStyles({
   root: {},
 });
 
-const About = () => {
+const About = props => {
+  const { list } = props;
   const styles = useStyles();
 
-  return (
-    <div className={styles.root}>
-      <Typography variant="h3" align="center" gutterBottom>
-        About Me
-      </Typography>
+  if (list) {
+    return (
+      <div className={styles.root}>
+        <div>
+          <Typography variant="h3" align="center" gutterBottom>
+            About Me
+          </Typography>
 
-      <Typography variant="h5" gutterBottom>
-        Hi! my name is Mitchell. I'm 27, studying software development.
-      </Typography>
-      <Typography variant="h5">
-        I'm a manager at Domino's for over 7 years, and I currently live in San
-        Diego
-      </Typography>
-    </div>
-  );
+          <Typography variant="h5" align="center" gutterBottom>
+            {list.name}, {list.label}
+          </Typography>
+          <Typography variant="body1" style={{ whiteSpace: 'pre-line' }}>
+            {list.summary}
+          </Typography>
+        </div>
+        <br />
+        <Divider />
+        <div>
+          <Typography variant="h3" align="center" gutterBottom>
+            Contact Me
+          </Typography>
+
+          <Typography variant="h5">
+            To contact me, select one of the links below
+          </Typography>
+
+          <Button
+            variant="outlined"
+            color="secondary"
+            href={`mailto:${list.email}`}
+          >
+            Email
+          </Button>
+        </div>
+      </div>
+    );
+  }
+  return <div>Loading...</div>;
 };
 
 export default About;

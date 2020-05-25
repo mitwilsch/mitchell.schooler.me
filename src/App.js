@@ -10,7 +10,6 @@ import {
   Contact,
   Resume,
 } from './Components';
-import api from './default-api';
 
 const useStyles = makeStyles(theme => ({
   root: { display: 'flex', flexDirection: 'column', minHeight: '100vh' },
@@ -49,8 +48,11 @@ const App = () => {
             path="/Portfolio"
             render={props => <Portfolio {...props} list={resume.projects} />}
           ></Route>
-          <Route path="/About" component={About}></Route>
-          <Route path="/Contact" component={Contact}></Route>
+          <Route
+            path="/About"
+            render={props => <About list={resume.basics} />}
+          ></Route>
+
           <Route
             path="/Resume"
             render={props => <Resume {...props} list={resume.work} />}

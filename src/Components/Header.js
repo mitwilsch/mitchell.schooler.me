@@ -55,7 +55,6 @@ const list = [
   { name: 'Home', link: '#' },
   { name: 'About', link: '#About' },
   { name: 'Portfolio', link: '#Portfolio' },
-  { name: 'Contact', link: '#Contact' },
   { name: 'Resume', link: '#Resume' },
 ];
 
