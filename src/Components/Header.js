@@ -56,6 +56,7 @@ const list = [
   { name: 'About', link: '#About' },
   { name: 'Portfolio', link: '#Portfolio' },
   { name: 'Contact', link: '#Contact' },
+  { name: 'Resume', link: '#Resume' },
 ];
 
 const Header = props => {
