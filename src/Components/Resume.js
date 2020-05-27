@@ -7,6 +7,7 @@ import {
   Collapse,
   Hidden,
   Divider,
+  Paper,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles/';
 
@@ -15,6 +16,7 @@ const useStyles = makeStyles({
   module: {
     display: 'flex',
     flexDirection: 'column',
+    marginBottom: '5%',
   },
   moduleItem: {},
   bolden: {
@@ -30,7 +32,6 @@ const Resume = props => {
     const { item } = props;
     return (
       <div className={styles.moduleItem}>
-        <Divider />
         <Typography variant="h6">{`${item.company} - ${item.position}`}</Typography>
         <Typography variant="caption">
           {item.startDate} - {item.endDate ? item.endDate : 'Present'}

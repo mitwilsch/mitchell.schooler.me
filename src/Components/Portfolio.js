@@ -126,34 +126,57 @@ const ProjectCard = props => {
     },
   };
   return (
-    <div style={{ margin: 'auto', marginBottom: '10%' }}>
-      <Typography color="secondary" variant="h4">
-        {name}
-      </Typography>
+    <Paper
+      style={{ margin: 'auto', marginBottom: '10%' }}
+      elevation={10}
+      variant="rounded"
+      rounded
+    >
+      <div style={{ marginLeft: '5%', paddingTop: '3%' }}>
+        <Typography color="secondary" variant="h4">
+          {name}
+        </Typography>
 
-      <Typography variant="h6" gutterBottom>
-        {summary}
-      </Typography>
-      <div style={{ backgroundColor: '#ececec' }}>
-        {props.item.images[0].resolutions.thumbnail.url ? (
-          <img
-            style={styles.img}
-            src={props.item.images[0].resolutions.thumbnail.url}
-          ></img>
+        <Typography variant="h6" gutterBottom>
+          {summary}
+        </Typography>
+        <div
+          style={{
+            backgroundColor: '#ececec',
+            marginLeft: '10%',
+            marginRight: '10%',
+          }}
+        >
+          {props.item.images[0].resolutions.thumbnail.url ? (
+            <img
+              style={styles.img}
+              src={props.item.images[0].resolutions.thumbnail.url}
+            ></img>
+          ) : null}
+        </div>
+        <Chips list={[...languages, ...libraries]} />
+        {website ? (
+          <Button
+            size="large"
+            color="primary"
+            href={website}
+            startIcon={<Public />}
+          >
+            Demo
+          </Button>
         ) : null}
-      </div>
-      <Chips list={[...languages, ...libraries]} />
-      {website ? (
-        <Button color="primary" href={website} startIcon={<Public />}>
-          Demo
-        </Button>
-      ) : null}
 
-      <Button color="primary" href={githubUrl} startIcon={<GitHub />}>
-        GitHub
-      </Button>
-      <Divider />
-    </div>
+        <Button
+          size="large"
+          color="primary"
+          href={githubUrl}
+          startIcon={<GitHub />}
+        >
+          GitHub
+        </Button>
+        <Divider />
+      </div>
+    </Paper>
   );
 };
 

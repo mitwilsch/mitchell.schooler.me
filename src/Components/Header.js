@@ -81,7 +81,7 @@ const Header = props => {
   return (
     <div className={styles.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={styles.appBar}>
+      <AppBar elevation={10} position="fixed" className={styles.appBar}>
         <Toolbar>
           <IconButton
             edge="start"
