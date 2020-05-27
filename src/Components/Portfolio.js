@@ -128,11 +128,11 @@ const ProjectCard = props => {
   return (
     <Paper
       style={{ margin: 'auto', marginBottom: '10%' }}
-      elevation={10}
+      elevation={5}
       variant="rounded"
       rounded
     >
-      <div style={{ marginLeft: '5%', paddingTop: '3%' }}>
+      <div>
         <Typography color="secondary" variant="h4">
           {name}
         </Typography>
