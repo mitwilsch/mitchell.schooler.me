@@ -21,7 +21,11 @@ const About = props => {
           <Typography variant="h5" align="center" gutterBottom>
             {list.name}, {list.label}
           </Typography>
-          <Typography variant="body1" style={{ whiteSpace: 'pre-line' }}>
+          <Typography
+            variant="body1"
+            align="center"
+            style={{ whiteSpace: 'pre-line' }}
+          >
             {list.summary}
           </Typography>
         </div>
@@ -32,7 +36,7 @@ const About = props => {
             Contact Me
           </Typography>
 
-          <Typography variant="h5">
+          <Typography variant="h5" align="center">
             To contact me, select one of the links below
           </Typography>
 

@@ -41,7 +41,8 @@ const App = () => {
       <CssBaseline />
 
       <Header>
-        <Container component="main" className={styles.main} maxWidth="sm">
+        <Container component="main" className={styles.main} maxWidth="md">
+          <CssBaseline />
           <Route exact={true} path="/" component={Main}></Route>
 
           <Route

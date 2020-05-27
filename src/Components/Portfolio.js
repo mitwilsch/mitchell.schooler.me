@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'clsx';
 import {
   Typography,
+  CssBaseline,
   Button,
   Card,
   CardContent,
@@ -12,6 +13,7 @@ import {
   Paper,
   makeStyles,
   Chip,
+  Divider,
 } from '@material-ui/core';
 
 import { GitHub, Launch, Public } from '@material-ui/icons';
@@ -30,12 +32,13 @@ const useStyles = makeStyles(theme => ({
   },
 
   card: {
-    margin: 'auto',
+    maxWidth: 500,
+    /* margin: 'auto',
     borderRadius: theme.spacing(2), // 16px
     transition: '0.3s',
     boxShadow: '0px 14px 80px rgba(34, 35, 58, 0.2)',
     position: 'relative',
-    maxWidth: 500,
+   
     marginLeft: 'auto',
     overflow: 'initial',
     background: '#ffffff',
@@ -46,16 +49,18 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       flexDirection: 'row',
       paddingTop: theme.spacing(2),
-    },
+    }, */
   },
   media: {
+    //marginTop: theme.spacing(-3),
+    height: 0,
+
+    /*
     width: '88%',
     marginLeft: 'auto',
-    marginRight: 'auto',
-    marginTop: theme.spacing(-3),
-    height: 0,
+    marginRight: 'auto',    
     paddingBottom: '48%',
-    borderRadius: theme.spacing(2),
+    theme.spacing(2),
     backgroundColor: '#fff',
     position: 'relative',
     [theme.breakpoints.up('md')]: {
@@ -63,7 +68,9 @@ const useStyles = makeStyles(theme => ({
       marginLeft: theme.spacing(-3),
       marginTop: 0,
       transform: 'translateX(-8px)',
+    
     },
+    
     '&:after': {
       content: '" "',
       position: 'absolute',
@@ -71,10 +78,11 @@ const useStyles = makeStyles(theme => ({
       left: 0,
       width: '100%',
       height: '100%',
-      backgroundImage: 'linear-gradient(147deg, #fe8a39 0%, #fd3838 74%)',
+      //backgroundImage: 'linear-gradient(147deg, #fe8a39 0%, #fd3838 74%)',
       borderRadius: theme.spacing(2), // 16
       opacity: 0.5,
     },
+    */
   },
 }));
 
@@ -84,7 +92,7 @@ const Chips = props => {
   return (
     <div className={styles.chips}>
       {list.map((item, index) => (
-        <li>
+        <li key={index}>
           <Chip
             label={item}
             key={index}
@@ -97,6 +105,58 @@ const Chips = props => {
     </div>
   );
 };
+
+const ProjectCard = props => {
+  const {
+    name,
+    summary,
+    languages,
+    libraries,
+    website,
+    githubUrl,
+  } = props.item;
+
+  const styles = {
+    img: {
+      margin: 'auto',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      display: 'block',
+      height: '50%',
+    },
+  };
+  return (
+    <div style={{ margin: 'auto', marginBottom: '10%' }}>
+      <Typography color="secondary" variant="h4">
+        {name}
+      </Typography>
+
+      <Typography variant="h6" gutterBottom>
+        {summary}
+      </Typography>
+      <div style={{ backgroundColor: '#ececec' }}>
+        {props.item.images[0].resolutions.thumbnail.url ? (
+          <img
+            style={styles.img}
+            src={props.item.images[0].resolutions.thumbnail.url}
+          ></img>
+        ) : null}
+      </div>
+      <Chips list={[...languages, ...libraries]} />
+      {website ? (
+        <Button color="primary" href={website} startIcon={<Public />}>
+          Demo
+        </Button>
+      ) : null}
+
+      <Button color="primary" href={githubUrl} startIcon={<GitHub />}>
+        GitHub
+      </Button>
+      <Divider />
+    </div>
+  );
+};
+
 const Portfolio = props => {
   const styles = useStyles();
   const { list } = props;
@@ -104,44 +164,15 @@ const Portfolio = props => {
   if (list) {
     return (
       <div style={{ width: 'auto' }}>
+        <CssBaseline />
         <Typography variant="h3" align="center" gutterBottom>
           My Portfolio
         </Typography>
         <div>
           {console.log(list)}
+
           {list.map((item, index) => (
-            <Card elevation={5} key={index} className={styles.card}>
-              {item.images.length != 0 ? (
-                <img
-                  src={item.images[0].resolutions.thumbnail.url}
-                  width={item.images[0].resolutions.thumbnail.width}
-                  height={item.images[0].resolutions.thumbnail.height}
-                ></img>
-              ) : null}
-
-              <CardContent>
-                <Typography variant="h5">{item.name}</Typography>
-
-                <Typography variant="body1" gutterBottom>
-                  {item.summary}
-                </Typography>
-                <Chips
-                  key={index}
-                  list={[...item.languages, ...item.libraries]}
-                />
-              </CardContent>
-              <CardActions>
-                {item.website ? (
-                  <IconButton color="primary" href={item.website} size="medium">
-                    <Public />
-                  </IconButton>
-                ) : null}
-
-                <IconButton color="primary" href={item.githubUrl}>
-                  <GitHub />
-                </IconButton>
-              </CardActions>
-            </Card>
+            <ProjectCard key={index} item={item} />
           ))}
         </div>
       </div>
