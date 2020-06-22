@@ -11,7 +11,7 @@ import {
   Resume,
 } from './Components';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: { display: 'flex', flexDirection: 'column', minHeight: '100vh' },
   main: { marginTop: theme.spacing(8), marginBottom: theme.spacing(2) },
   footer: {
@@ -43,21 +43,21 @@ const App = () => {
       <Header>
         <Container component="main" className={styles.main} maxWidth="md">
           <CssBaseline />
-          <Route exact={true} path="/" component={Main}></Route>
+          <Route exact path="/" render={(props) => <Main list={resume} />} />
 
           <Route
             path="/Portfolio"
-            render={props => <Portfolio {...props} list={resume.projects} />}
-          ></Route>
+            render={(props) => <Portfolio {...props} list={resume.projects} />}
+          />
           <Route
             path="/About"
-            render={props => <About list={resume.basics} />}
-          ></Route>
+            render={(props) => <About list={resume.basics} />}
+          />
 
           <Route
             path="/Resume"
-            render={props => <Resume {...props} list={resume.work} />}
-          ></Route>
+            render={(props) => <Resume {...props} list={resume.work} />}
+          />
         </Container>
       </Header>
       <footer className={styles.footer}>

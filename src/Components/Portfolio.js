@@ -18,10 +18,10 @@ import {
 
 import { GitHub, Launch, Public } from '@material-ui/icons';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   chips: {
     display: 'flex',
-    //justifyContent: 'center',
+    // justifyContent: 'center',
     flexWrap: 'wrap',
     listStyle: 'none',
     padding: theme.spacing(0.5),
@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
     transition: '0.3s',
     boxShadow: '0px 14px 80px rgba(34, 35, 58, 0.2)',
     position: 'relative',
-   
+
     marginLeft: 'auto',
     overflow: 'initial',
     background: '#ffffff',
@@ -52,13 +52,13 @@ const useStyles = makeStyles(theme => ({
     }, */
   },
   media: {
-    //marginTop: theme.spacing(-3),
+    // marginTop: theme.spacing(-3),
     height: 0,
 
     /*
     width: '88%',
     marginLeft: 'auto',
-    marginRight: 'auto',    
+    marginRight: 'auto',
     paddingBottom: '48%',
     theme.spacing(2),
     backgroundColor: '#fff',
@@ -68,9 +68,9 @@ const useStyles = makeStyles(theme => ({
       marginLeft: theme.spacing(-3),
       marginTop: 0,
       transform: 'translateX(-8px)',
-    
+
     },
-    
+
     '&:after': {
       content: '" "',
       position: 'absolute',
@@ -86,7 +86,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Chips = props => {
+const Chips = (props) => {
   const { list } = props;
   const styles = useStyles();
   return (
@@ -106,7 +106,7 @@ const Chips = props => {
   );
 };
 
-const ProjectCard = props => {
+const ProjectCard = (props) => {
   const {
     name,
     summary,
@@ -129,7 +129,6 @@ const ProjectCard = props => {
     <Paper
       style={{ margin: 'auto', marginBottom: '10%' }}
       elevation={5}
-      variant="rounded"
       rounded
     >
       <div>
@@ -151,7 +150,7 @@ const ProjectCard = props => {
             <img
               style={styles.img}
               src={props.item.images[0].resolutions.thumbnail.url}
-            ></img>
+            />
           ) : null}
         </div>
         <Chips list={[...languages, ...libraries]} />
@@ -180,7 +179,7 @@ const ProjectCard = props => {
   );
 };
 
-const Portfolio = props => {
+const Portfolio = (props) => {
   const styles = useStyles();
   const { list } = props;
 
@@ -192,8 +191,6 @@ const Portfolio = props => {
           My Portfolio
         </Typography>
         <div>
-          {console.log(list)}
-
           {list.map((item, index) => (
             <ProjectCard key={index} item={item} />
           ))}

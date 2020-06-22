@@ -6,7 +6,7 @@ const useStyles = makeStyles({
   root: {},
 });
 
-const About = props => {
+const About = (props) => {
   const { list } = props;
   const styles = useStyles();
 
@@ -22,7 +22,7 @@ const About = props => {
             {list.name}, {list.label}
           </Typography>
           <Typography
-            variant="body1"
+            variant="h6"
             align="center"
             style={{ whiteSpace: 'pre-line' }}
           >
@@ -31,23 +31,6 @@ const About = props => {
         </div>
         <br />
         <Divider />
-        <div>
-          <Typography variant="h3" align="center" gutterBottom>
-            Contact Me
-          </Typography>
-
-          <Typography variant="h5" align="center">
-            To contact me, select one of the links below
-          </Typography>
-
-          <Button
-            variant="outlined"
-            color="secondary"
-            href={`mailto:${list.email}`}
-          >
-            Email
-          </Button>
-        </div>
       </div>
     );
   }
