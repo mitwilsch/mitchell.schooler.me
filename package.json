@@ -2,6 +2,7 @@
   "name": "mitchell.schooler.me",
   "version": "0.0.1",
   "description": "Personal Website",
+  "homepage": "https://mitwilsch.github.io/mitchell.schooler.me/",
   "main": "src/server/index.js",
   "scripts": {
     "build": "webpack --mode production",
