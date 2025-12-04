@@ -15,7 +15,7 @@ const Main = (props) => {
     <div className={styles.root}>
       <About list={list.basics} />
 
-      <Portfolio list={list.projects} />
+      
     </div>
   );
 };

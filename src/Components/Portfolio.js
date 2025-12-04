@@ -146,12 +146,13 @@ const ProjectCard = (props) => {
             marginRight: '10%',
           }}
         >
-          {props.item.images[0].resolutions.thumbnail.url ? (
+          
+          {/*props.item.images[0].resolutions.thumbnail.url ? (
             <img
               style={styles.img}
               src={props.item.images[0].resolutions.thumbnail.url}
             />
-          ) : null}
+          ) : null*/}
         </div>
         <Chips list={[...languages, ...libraries]} />
         {website ? (
